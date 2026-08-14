@@ -108,7 +108,7 @@
     padding-top: 2.75rem;
 }
 
-.course-image {
+.course-image img {
     width: 200px;
     height: 150px;
     margin-right: 15px;
@@ -117,10 +117,6 @@
     object-fit: cover;
 
     border-radius: 16px;
-    background:
-        url("../assets/courses/firstSteps-port.jpg")
-        center / cover
-        no-repeat;
 }
 
 .course-details {

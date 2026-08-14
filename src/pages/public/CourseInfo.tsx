@@ -10,6 +10,7 @@ import {
     Play,
     Sailboat,
 } from "lucide-react";
+import firstStepsPort from "@/assets/courses/firstStepsPort.jpg"
 
 export function CourseInfo() {
     return (
@@ -45,6 +46,7 @@ export function CourseInfo() {
                 <div className="course-header-info">
 
                     <div className="course-image">
+                        <img src={firstStepsPort} />
                     </div>
 
                     <div className="course-details">

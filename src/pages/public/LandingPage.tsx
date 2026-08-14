@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 import s2i1 from "@/assets/landing_page/s2i1.webp";
 import s2i2 from "@/assets/landing_page/s2i2.webp";
-import { Heart } from "lucide-react";
 
 export function LandingPage() {
   return (
