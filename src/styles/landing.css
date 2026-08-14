@@ -1,0 +1,429 @@
+/* =========================================================
+   LANDING PAGE
+   ========================================================= */
+
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 6rem 2rem;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.48)
+        ),
+        url("../assets/landing_page/mainTitle.jpg")
+        center / cover;
+
+    color: var(--white);
+    text-align: center;
+}
+
+.hero-content {
+    width: min(760px, 100%);
+
+    animation: landing-fade-up 700ms ease both;
+}
+
+.hero h1 {
+    margin: 0;
+
+    font-family: "Copse", serif;
+    font-size: clamp(3.5rem, 9vw, 6rem);
+    line-height: 1.15;
+    letter-spacing: 4px;
+
+    text-shadow:
+        0 4px 18px rgba(0, 0, 0, 0.22);
+}
+
+.hero p {
+    max-width: 620px;
+
+    margin: 1.5rem auto 2.5rem;
+
+    font-size: 20px;
+    line-height: 1.55;
+}
+
+.btn-plus button {
+    max-width: 50%;
+}
+
+
+/* =========================================================
+   FEATURES
+   ========================================================= */
+
+.features {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+
+    padding: 7rem max(2rem, 7vw);
+
+    background: var(--bg);
+}
+
+.feature {
+    width: min(1100px, 100%);
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+
+    gap: clamp(3rem, 7vw, 7rem);
+}
+
+.feature.reverse {
+    flex-direction: row-reverse;
+}
+
+.feature .text {
+    flex: 1;
+    max-width: 520px;
+}
+
+.feature h3 {
+    margin: 0 0 1rem;
+
+    color: var(--acc);
+
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+    line-height: 1.4;
+}
+
+.feature p {
+    margin: 0;
+
+    color: var(--acc);
+
+    font-size: 18px;
+    line-height: 1.65;
+}
+
+.feature b {
+    color: var(--pr);
+}
+
+.feature img {
+    width: min(500px, 100%);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 12px 30px rgba(31, 53, 94, 0.08);
+
+    transition:
+        transform 250ms ease,
+        box-shadow 250ms ease;
+}
+
+.feature img:hover {
+    transform: translateY(-6px) rotate(-0.5deg);
+
+    box-shadow:
+        0 18px 35px rgba(31, 53, 94, 0.12);
+}
+
+
+/* =========================================================
+   VALUES
+   ========================================================= */
+
+.values {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 2rem;
+
+    padding: 7rem max(2rem, 7vw);
+
+    background: var(--bg);
+}
+
+.values article {
+    padding: 2.5rem;
+
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    background: var(--white);
+
+    box-shadow:
+        0 4px 14px rgba(31, 53, 94, 0.035);
+
+    transition:
+        transform 220ms ease,
+        box-shadow 220ms ease,
+        border-color 220ms ease;
+}
+
+.values article:hover {
+    transform: translateY(-6px);
+
+    border-color: var(--pr);
+
+    box-shadow:
+        0 12px 28px rgba(31, 53, 94, 0.08);
+}
+
+.values h3 {
+    margin: 0 0 1rem;
+
+    color: var(--pr);
+
+    font-size: 1.5rem;
+    line-height: 1.4;
+}
+
+.values p {
+    max-width: 65ch;
+
+    margin: 0;
+
+    color: var(--acc);
+
+    font-size: 18px;
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   ENTRY POINTS
+   ========================================================= */
+
+.landing-cards {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 7rem max(2rem, 5vw);
+
+    background: var(--acc);
+    color: var(--white);
+}
+
+.landing-cards h2 {
+    max-width: 1100px;
+    width: 100%;
+
+    margin: 0 auto;
+
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.4;
+}
+
+.landing-card-grid {
+    width: min(1100px, 100%);
+
+    margin: 2.5rem auto 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 2rem;
+}
+
+.landing-card-grid .card button {
+    width: auto;
+    min-width: 80%;
+
+    align-self: center;
+
+    margin: 1.2rem;
+
+    padding: 0.9rem 1.6rem;
+
+    border-radius: 999px;
+}
+
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.cta {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    background:
+        url("../assets/landing_page/final.jpg")
+        center / cover;
+}
+
+.cta img {
+    display: none;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 2rem;
+
+    background:
+        linear-gradient(
+            rgba(31, 53, 94, 0.35),
+            rgba(31, 53, 94, 0.48)
+        );
+
+    color: var(--white);
+
+    text-align: center;
+}
+
+.overlay h2 {
+    max-width: 700px;
+
+    margin: 0;
+
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.35;
+}
+
+.overlay p {
+    max-width: 600px;
+
+    margin: 1rem 0 2.5rem;
+
+    font-size: 19px;
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .feature,
+    .feature.reverse {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2rem;
+    }
+
+    .feature .text {
+        max-width: none;
+    }
+
+    .feature img {
+        width: 100%;
+        max-width: 600px;
+
+        margin: 0 auto;
+    }
+
+    .values {
+        grid-template-columns: 1fr;
+    }
+
+    .landing-card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .landing-card-grid button {
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .hero {
+        padding: 5rem 1.25rem;
+    }
+
+    .hero h1 {
+        letter-spacing: 2px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .features,
+    .values {
+        padding: 5rem 1.25rem;
+    }
+
+    .feature p,
+    .values p {
+        font-size: 18px;
+    }
+
+    .values article {
+        padding: 2rem;
+    }
+
+    .landing-cards {
+        min-height: auto;
+        padding: 5rem 1.25rem;
+    }
+
+    .landing-card-grid {
+        gap: 1.25rem;
+    }
+
+    .cta {
+        min-height: 80vh;
+    }
+
+    .overlay {
+        padding: 1.5rem;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hero-content,
+    .feature img,
+    .values article,
+    .hero button,
+    .overlay button {
+        animation: none;
+        transition: none;
+    }
+}

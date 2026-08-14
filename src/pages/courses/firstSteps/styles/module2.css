@@ -1,0 +1,397 @@
+.module2-social {
+    width: 70%;
+    overflow: hidden;
+    border: 1px solid #E7E2D8;
+    border-radius: 18px;
+    background: #FFFFFF;
+    box-shadow:
+        0 8px 24px rgba(27, 42, 74, 0.08),
+        0 2px 5px rgba(27, 42, 74, 0.04);
+}
+
+
+/* =========================================================
+   SOCIAL HEADER
+   ========================================================= */
+
+.module2-social__header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 17px;
+    border-bottom: 1px solid #E7E2D8;
+}
+
+.module2-avatar {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 50%;
+    background: var(--pr);
+    color: var(--acc);
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.module2-profile-name {
+    color: var(--acc);
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.module2-profile-meta {
+    margin-top: 3px;
+    color: #8F8C84;
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   POST IMAGE
+   ========================================================= */
+
+.module2-image {
+    position: relative;
+    width: 100%;
+    height: 285px;
+    overflow: hidden;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #E7E2D8;
+}
+
+
+/* =========================================================
+   SOCIAL ACTIONS
+   ========================================================= */
+
+.module2-social__actions {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    padding: 13px 17px;
+    border-bottom: 1px solid #E7E2D8;
+}
+
+.module2-social__actions button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    color: var(--acc);
+    cursor: pointer;
+}
+
+.module2-social__actions button span {
+    margin-left: 5px;
+}
+
+.module2-social__actions button:hover {
+    color: var(--pr);
+}
+
+
+/* =========================================================
+   VISUAL CLUES
+   ========================================================= */
+
+.module2-clues {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 20px 17px;
+}
+
+.module2-clue {
+    padding: 2rem;
+    border: 1px solid #E7E2D8;
+    border-radius: 12px;
+    background: white;
+}
+
+.module2-clue__header {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 5px;
+}
+
+.module2-clue__header strong {
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.module2-clue__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--pr);
+}
+
+.module2-clue p {
+    margin: 0;
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   TOOLTIP
+   ========================================================= */
+
+.module2-tooltip {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 18px 20px;
+    border: 1px solid var(--pr);
+    border-radius: 16px;
+    background: #ffebd4;
+    line-height: 1.55;
+    box-shadow:
+        0 5px 16px rgba(27, 42, 74, 0.05);
+}
+
+.module2-tooltip::before {
+    content: "";
+    position: absolute;
+    left: -8px;
+    top: 28px;
+    width: 14px;
+    height: 14px;
+    border-left: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    transform: rotate(45deg);
+}
+
+.module2-tooltip__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    margin-bottom: 10px;
+    border-radius: 11px;
+    background: rgba(242, 160, 61, 0.12);
+    color: var(--pr);
+}
+
+.module2-tooltip p {
+    margin: 0;
+}
+
+
+/* =========================================================
+   EXPLANATION
+   ========================================================= */
+
+.module2-explanation {
+    padding: 1rem;
+    border-radius: 17px;
+    background: #FFFFFF;
+}
+
+.module2-explanation h2 {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 0 0 12px;
+    color: var(--acc);
+}
+
+.module2-explanation h2 svg {
+    flex-shrink: 0;
+    color: var(--pr);
+}
+
+.module2-explanation > p {
+    margin: 0 0 18px;
+    line-height: 1.55;
+}
+
+.module2-explanation ul {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.module2-explanation li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.5;
+}
+
+.module2-explanation li > svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: var(--acc);
+}
+
+
+/* =========================================================
+   ACTIVITY
+   ========================================================= */
+
+.module2-activity {
+    border-radius: 17px;
+    background: white;
+}
+
+.module2-activity h2 {
+    margin: 0 0 18px;
+    padding-top: 5px;
+    color: var(--acc);
+    font-size: 21px;
+    line-height: 1.35;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   OPTIONS
+   ========================================================= */
+
+.module2-options {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 12px;
+}
+
+.module2-option {
+    width: 100%;
+    padding: 17px 19px;
+    border: 2px solid var(--border);
+    border-radius: 14px;
+    background: white;
+    line-height: 1.45;
+    text-align: left;
+    cursor: pointer;
+    transition:
+        border-color 160ms ease,
+        background-color 160ms ease,
+        transform 160ms ease;
+}
+
+.module2-option:hover {
+    border-color: var(--pr);
+    background: var(--grey);
+    transform: translateY(-1px);
+}
+
+.module2-option--correct {
+    border-color: var(--success);
+}
+
+.module2-option--correct:hover {
+    border-color: var(--success);
+    background: var(--grey);
+    color: var(--success);
+}
+
+
+/* =========================================================
+   FEEDBACK
+   ========================================================= */
+
+.module2-feedback {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    margin-top: 18px;
+    padding: 17px 19px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: #F4F9F6;
+}
+
+.module2-feedback > svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: var(--success);
+}
+
+.module2-feedback h3 {
+    margin: 0 0 4px;
+    color: var(--acc);
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.module2-feedback p {
+    margin: 0;
+    color: var(--acc);
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .module2-simulation {
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+    .module2-tooltip {
+        width: 100%;
+        max-width: 560px;
+    }
+
+    .module2-tooltip::before {
+        display: none;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .module2-social {
+        border-radius: 15px;
+    }
+
+    .module2-image {
+        height: 220px;
+    }
+
+    .module2-clues {
+        grid-template-columns: 1fr;
+    }
+
+    .module2-explanation,
+    .module2-activity {
+        padding: 20px;
+    }
+
+    .module2-explanation h2,
+    .module2-activity h2 {
+        font-size: 19px;
+    }
+
+    .module2-option {
+        font-size: 14px;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .module2-option {
+        transition: none;
+    }
+}

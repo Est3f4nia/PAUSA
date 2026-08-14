@@ -1,0 +1,664 @@
+/* =========================================================
+   MODULE PAGE
+   ========================================================= */
+
+.module-page {
+    width: 100%;
+    padding: 32px 24px 70px;
+}
+
+.module-page__container {
+    width: min(1100px, 100%);
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+}
+
+
+/* =========================================================
+   SHARED CARD
+   ========================================================= */
+
+.module-card {
+    background: var(--white);
+
+    border: 2px solid var(--border);
+    border-radius: 20px;
+
+    box-shadow:
+        0 3px 12px rgba(27, 42, 74, 0.035),
+        0 1px 2px rgba(27, 42, 74, 0.03);
+}
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.module-intro {
+    padding: 52px 56px;
+}
+
+.module-intro__eyebrow {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 16px;
+
+    color: var(--pr);
+
+    font-size: 14px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.module-intro h1 {
+    margin: 0 0 16px;
+
+    color: var(--acc);
+
+    font-size: clamp(36px, 5vw, 52px);
+    line-height: 1.15;
+    font-weight: 800;
+
+    letter-spacing: -0.025em;
+}
+
+.module-intro p {
+    max-width: 850px;
+
+    margin: 0;
+
+    color: var(--text);
+
+    font-size: clamp(19px, 2vw, 24px);
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   LEARNING AREA
+   ========================================================= */
+
+.module-learning {
+    display: grid;
+
+
+    gap: 24px;
+
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   SIMULATION
+   ========================================================= */
+
+.module-learning__simulation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-width: 0;
+}
+
+
+/*
+ * Useful when the simulation itself is a visual object
+ * such as the smartphone from Module 1.
+ */
+
+.module-simulation {
+    position: relative;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* =========================================================
+   EXPLANATION
+   ========================================================= */
+
+.module-learning__explanation {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 38px;
+
+    background: var(--white);
+
+    border: 2px solid var(--border);
+    border-radius: 20px;
+
+    box-shadow:
+        0 3px 12px rgba(27, 42, 74, 0.035),
+        0 1px 2px rgba(27, 42, 74, 0.03);
+}
+
+.module-explanation h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin: 0 0 18px;
+
+    color: var(--acc);
+
+    font-size: 30px;
+    line-height: 1.25;
+    font-weight: 800;
+}
+
+.module-explanation h2 svg {
+    flex-shrink: 0;
+
+    color: var(--pr);
+}
+
+.module-explanation > p {
+    margin: 0 0 24px;
+
+    color: var(--acc);
+
+    font-size: 20px;
+    line-height: 1.55;
+}
+
+.module-explanation ul {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.module-explanation li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+
+    color: var(--acc);
+
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+.module-explanation li svg {
+    flex-shrink: 0;
+
+    margin-top: 3px;
+
+    color: var(--pr);
+}
+
+
+/* =========================================================
+   ACTIVITY
+   ========================================================= */
+
+.module-activity {
+    padding: 52px 56px;
+
+    background: var(--white);
+
+    border: 2px solid var(--border);
+    border-radius: 20px;
+
+    box-shadow:
+        0 3px 12px rgba(27, 42, 74, 0.035),
+        0 1px 2px rgba(27, 42, 74, 0.03);
+}
+
+.module-activity h2 {
+    margin: 0 0 30px;
+
+    color: var(--acc);
+
+    font-size: 30px;
+    line-height: 1.3;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   ACTIVITY OPTIONS
+   ========================================================= */
+
+.module-options {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    margin-bottom: 28px;
+}
+
+.module-option {
+    width: 100%;
+    min-height: 56px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 16px;
+
+    padding: 14px 22px;
+
+    border: 2px solid var(--border);
+    border-radius: 999px;
+
+    background: var(--white);
+    color: var(--acc);
+
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: 600;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        background-color 160ms ease,
+        border-color 160ms ease,
+        transform 160ms ease,
+        color 160ms ease;
+}
+
+.module-option:hover {
+    background: var(--background);
+}
+
+.module-option:focus-visible {
+    outline: none;
+
+    border-color: var(--pr);
+}
+
+.module-option:active {
+    transform: translateY(1px);
+}
+
+.module-option--correct {
+    border-color: var(--success);
+
+    background: var(--success);
+    color: var(--white);
+}
+
+
+/* =========================================================
+   FEEDBACK
+   ========================================================= */
+
+.module-feedback {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+
+    padding: 22px;
+
+    border-left: 4px solid var(--success);
+    border-radius: 0 12px 12px 0;
+
+    background: rgba(60, 140, 99, 0.10);
+}
+
+.module-feedback svg {
+    flex-shrink: 0;
+
+    width: 38px;
+    height: 38px;
+
+    color: var(--success);
+}
+
+.module-feedback h3 {
+    margin: 0 0 7px;
+
+    color: var(--acc);
+
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.module-feedback p {
+    margin: 0;
+
+    color: var(--acc);
+
+    font-size: 17px;
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
+
+.module-button {
+    min-height: 56px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    padding: 0 24px;
+
+    border-radius: 999px;
+
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        transform 160ms ease,
+        box-shadow 160ms ease,
+        background-color 160ms ease,
+        border-color 160ms ease,
+        filter 160ms ease;
+}
+
+.module-button svg {
+    flex-shrink: 0;
+
+    width: 22px;
+    height: 22px;
+}
+
+.module-button:hover {
+    transform: translateY(-2px);
+}
+
+.module-button:active {
+    transform: translateY(1px);
+}
+
+.module-button--primary {
+    border: 1px solid var(--pr);
+
+    background: var(--pr);
+    color: var(--acc);
+
+    box-shadow:
+        0 4px 0 rgba(27, 42, 74, 0.11);
+}
+
+.module-button--primary:hover {
+    filter: brightness(1.04);
+
+    box-shadow:
+        0 6px 0 rgba(27, 42, 74, 0.11);
+}
+
+.module-button--primary:active {
+    box-shadow:
+        0 2px 0 rgba(27, 42, 74, 0.11);
+}
+
+
+/* =========================================================
+   MISSION
+   ========================================================= */
+
+.module-mission {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 56px;
+
+    overflow: hidden;
+
+    background: var(--white);
+
+    border: 2px solid var(--border);
+    border-radius: 20px;
+
+    box-shadow:
+        0 3px 12px rgba(27, 42, 74, 0.035),
+        0 1px 2px rgba(27, 42, 74, 0.03);
+
+    text-align: center;
+}
+
+.module-mission__pattern {
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.05;
+
+    background-image:
+        radial-gradient(
+            var(--pr) 2px,
+            transparent 2px
+        );
+
+    background-size: 30px 30px;
+}
+
+.module-mission__icon {
+    position: relative;
+    z-index: 1;
+
+    width: 80px;
+    height: 80px;
+
+    display: grid;
+    place-items: center;
+
+    margin-bottom: 24px;
+
+    border-radius: 50%;
+
+    background: rgba(242, 160, 61, 0.15);
+
+    color: var(--pr);
+}
+
+.module-mission__icon svg {
+    width: 48px;
+    height: 48px;
+}
+
+.module-mission h2 {
+    position: relative;
+    z-index: 1;
+
+    max-width: 850px;
+
+    margin: 0 0 28px;
+
+    color: var(--acc);
+
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.15;
+    font-weight: 800;
+
+    letter-spacing: -0.025em;
+}
+
+.module-mission__description {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    max-width: 700px;
+
+    margin-bottom: 38px;
+}
+
+.module-mission__description p {
+    margin: 0;
+
+    padding: 24px;
+
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    background: var(--background);
+
+    color: var(--text);
+
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.module-mission__description strong {
+    color: var(--acc);
+}
+
+
+/* =========================================================
+   OPTIONAL CONTENT HELPERS
+   ========================================================= */
+
+.module-text {
+    color: var(--text);
+
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.module-highlight {
+    padding: 18px 20px;
+
+    border-left: 4px solid var(--pr);
+    border-radius: 0 12px 12px 0;
+
+    background: var(--background);
+
+    color: var(--acc);
+
+    font-size: 17px;
+    line-height: 1.55;
+}
+
+.module-icon-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.module-icon-title svg {
+    flex-shrink: 0;
+
+    color: var(--pr);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .module-learning {
+        grid-template-columns: 1fr;
+    }
+
+    .module-learning__simulation {
+        min-height: 400px;
+    }
+
+    .module-intro,
+    .module-activity,
+    .module-mission {
+        padding: 40px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .module-page {
+        padding: 24px 16px 55px;
+    }
+
+    .module-page__container {
+        gap: 32px;
+    }
+
+    .module-intro,
+    .module-activity,
+    .module-mission,
+    .module-learning__explanation {
+        padding: 26px 22px;
+    }
+
+    .module-intro h1 {
+        font-size: 34px;
+    }
+
+    .module-intro p {
+        font-size: 18px;
+    }
+
+    .module-explanation h2 {
+        font-size: 25px;
+    }
+
+    .module-explanation > p {
+        font-size: 18px;
+    }
+
+    .module-activity h2 {
+        font-size: 25px;
+    }
+
+    .module-option {
+        border-radius: 16px;
+
+        font-size: 16px;
+    }
+
+    .module-mission h2 {
+        font-size: 32px;
+    }
+
+    .module-mission__description p {
+        font-size: 17px;
+    }
+
+    .module-button {
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .module-page *,
+    .module-page *::before,
+    .module-page *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+        animation: none !important;
+    }
+}

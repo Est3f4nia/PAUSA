@@ -1,0 +1,369 @@
+/* =========================================================
+   MODULE 3 — DIGITAL FEED SIMULATION
+   ========================================================= */
+
+.social-phone {
+    position: relative;
+
+    width: 300px;
+    height: 560px;
+
+    padding: 10px;
+
+    border: 3px solid #1B2A4A;
+    border-radius: 36px;
+
+    background: #1B2A4A;
+
+    box-shadow:
+        0 20px 45px rgba(27, 42, 74, 0.18);
+}
+
+
+/* =========================================================
+   PHONE
+   ========================================================= */
+
+.social-phone__notch {
+    position: absolute;
+
+    top: 9px;
+    left: 50%;
+
+    width: 105px;
+    height: 22px;
+
+    transform: translateX(-50%);
+
+    border-radius: 0 0 14px 14px;
+
+    background: #1B2A4A;
+
+    z-index: 5;
+}
+
+.social-phone__screen {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    border-radius: 27px;
+
+    background: #F8F7F3;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.social-phone__header {
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 18px 16px 8px;
+
+    border-bottom: 1px solid #E7E2D8;
+
+    background: #FFFFFF;
+
+    color: #1B2A4A;
+}
+
+.social-phone__header svg {
+    width: 19px;
+    height: 19px;
+}
+
+.social-phone__header strong {
+    font-size: 15px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   FEED
+   ========================================================= */
+
+.social-feed {
+    height: calc(100% - 108px);
+
+    overflow: hidden;
+
+    padding: 12px;
+}
+
+
+/* =========================================================
+   POST
+   ========================================================= */
+
+.social-post {
+    padding: 14px;
+
+    border: 1px solid #E7E2D8;
+    border-radius: 14px;
+
+    background: #FFFFFF;
+
+    box-shadow:
+        0 2px 8px rgba(27, 42, 74, 0.04);
+}
+
+.social-post__user {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    margin-bottom: 12px;
+}
+
+.social-post__avatar {
+    width: 34px;
+    height: 34px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: #1B2A4A;
+    color: #FFFFFF;
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.social-post__user strong {
+    display: block;
+
+    color: #1B2A4A;
+
+    font-size: 12px;
+}
+
+.social-post__user span {
+    display: block;
+
+    margin-top: 2px;
+
+    color: #8F8C84;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   POST TEXT
+   ========================================================= */
+
+.social-post > p {
+    margin: 0 0 12px;
+
+    color: #534436;
+
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   VIDEO
+   ========================================================= */
+
+.social-post__image {
+    height: 130px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #DCE8E1,
+            #C9D7D1
+        );
+
+    color: #1B2A4A;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.social-post__image svg {
+    width: 30px;
+    height: 30px;
+}
+
+
+/* =========================================================
+   POST ACTIONS
+   ========================================================= */
+
+.social-post__actions {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 12px;
+
+    color: #534436;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   NOTIFICATION
+   ========================================================= */
+
+.social-notification {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin: 12px 0;
+
+    padding: 11px;
+
+    border: 1px solid rgba(242, 160, 61, 0.25);
+    border-radius: 12px;
+
+    background: rgba(242, 160, 61, 0.09);
+}
+
+.social-notification svg {
+    flex-shrink: 0;
+
+    width: 20px;
+    height: 20px;
+
+    color: #F2A03D;
+}
+
+.social-notification strong {
+    display: block;
+
+    color: #1B2A4A;
+
+    font-size: 11px;
+}
+
+.social-notification span {
+    display: block;
+
+    margin-top: 2px;
+
+    color: #534436;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   RECOMMENDED POST
+   ========================================================= */
+
+.social-post--suggested {
+    opacity: .9;
+}
+
+.social-post__label {
+    margin-bottom: 8px;
+
+    color: #3C8C63;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+    letter-spacing: .05em;
+}
+
+.social-post__fake-image {
+    height: 80px;
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #E7E2D8,
+            #D8C3B0
+        );
+}
+
+
+/* =========================================================
+   BOTTOM NAV
+   ========================================================= */
+
+.social-phone__nav {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    border-top: 1px solid #E7E2D8;
+
+    background: #FFFFFF;
+
+    color: #534436;
+
+    font-size: 17px;
+}
+
+.social-phone__nav span:nth-child(3) {
+    width: 31px;
+    height: 31px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: #F2A03D;
+
+    color: #1B2A4A;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    .social-phone {
+        width: 270px;
+        height: 510px;
+    }
+
+    .social-post__image {
+        height: 110px;
+    }
+
+}

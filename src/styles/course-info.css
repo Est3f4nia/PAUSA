@@ -1,0 +1,1348 @@
+/* =========================================================
+   COURSE INFO
+========================================================= */
+
+.course-page {
+    width: 100%;
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 3rem;
+    padding-top: 150px;
+    color: var(--acc);
+}
+
+
+/* =========================================================
+   COURSE HEADER
+========================================================= */
+
+.course-header {
+    position: relative;
+    padding: 2rem;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+    box-shadow:
+        0 3px 12px rgba(27, 42, 74, 0.035),
+        0 1px 2px rgba(27, 42, 74, 0.03);
+}
+
+.course-actions {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+}
+
+.course-back {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+
+    min-width: max-content;
+
+    color: var(--acc);
+    font-size: 16px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        color 160ms ease,
+        transform 160ms ease;
+}
+
+.course-back:hover {
+    color: var(--pr);
+    transform: translateX(-2px);
+}
+
+.course-actions svg {
+    color: var(--pr);
+}
+
+.course-actions button {
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid var(--border);
+    border-radius: 50%;
+
+    background: var(--white);
+    color: var(--acc);
+
+    cursor: pointer;
+
+    transition:
+        background-color 160ms ease,
+        border-color 160ms ease,
+        transform 160ms ease;
+}
+
+.course-actions button:hover {
+    background: var(--bg);
+    border-color: var(--pr);
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   COURSE HEADER INFO
+========================================================= */
+
+.course-header-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+
+    padding-top: 2.75rem;
+}
+
+.course-image {
+    width: 200px;
+    height: 150px;
+    margin-right: 15px;
+    flex-shrink: 0;
+
+    object-fit: cover;
+
+    border-radius: 16px;
+    background:
+        url("../assets/courses/firstSteps-port.jpg")
+        center / cover
+        no-repeat;
+}
+
+.course-details {
+    padding-top: .1rem;
+}
+
+.course-details h1 {
+    margin: 0 0 .35rem;
+
+    color: var(--acc);
+
+    font-size: clamp(30px, 4vw, 42px);
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.course-details p {
+    max-width: 560px;
+
+    margin: 0 0 1rem;
+
+    color: var(--acc);
+
+    font-size: 18px;
+    line-height: 1.55;
+}
+
+.course-var {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+
+    margin-bottom: .7rem;
+
+    color: var(--pr);
+
+    font-size: 14px;
+    font-weight: 800;
+
+    letter-spacing: .07em;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   COURSE MAP
+========================================================= */
+
+.course-map {
+    position: relative;
+
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+
+    background-color: var(--border);
+
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+
+/*
+   La línea ya no usa top:0 / bottom:0.
+   Se coloca detrás de los módulos y se extiende
+   únicamente entre el primer y último nodo.
+*/
+
+.course-map-line {
+    position: absolute;
+
+    top: 190px;
+    bottom: 190px;
+    left: 50%;
+
+    width: 4px;
+
+    transform: translateX(-50%);
+
+    background: var(--pr);
+
+    z-index: 0;
+}
+
+
+/* =========================================================
+   MODULE LIST
+========================================================= */
+
+.course-map-list {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 3.5rem;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   MODULE CARD
+========================================================= */
+
+.module-card {
+    position: relative;
+
+    width: 70%;
+    height: 384px;
+
+    overflow: hidden;
+
+    border: 2px solid var(--pr);
+    border-radius: 24px;
+
+    background: var(--bg);
+
+    isolation: isolate;
+
+    transition:
+        transform 220ms ease,
+        box-shadow 220ms ease,
+        border-color 220ms ease;
+}
+
+.module-card:nth-child(even) {
+    margin-left: auto;
+}
+
+.module-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(27, 42, 74, .08);
+}
+
+.module-card--completed {
+    background: #edf4ef;
+}
+
+.module-card--current {
+    background: #f5f0e6;
+    border-color: var(--pr);
+}
+
+.module-card--locked {
+    background: #eaf0ee;
+}
+
+.module-card--four {
+    background: #eef0f3;
+}
+
+
+/* =========================================================
+   SCENE BASE
+========================================================= */
+
+.module-background {
+    position: absolute;
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* =========================================================
+   MODULE 1 — CITY
+========================================================= */
+
+.module-background--1 {
+    background:
+        linear-gradient(
+            to bottom,
+            #dceaf1 0%,
+            #dceaf1 55%,
+            #c6d7dc 55%,
+            #c6d7dc 100%
+        );
+}
+
+
+/* skyline */
+
+.module-background--1::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 47%;
+
+    background:
+        linear-gradient(
+            to right,
+            transparent 0 4%,
+            #879da4 4% 12%,
+            transparent 12% 14%,
+            #6f8992 14% 24%,
+            transparent 24% 26%,
+            #91a6ad 26% 34%,
+            transparent 34% 37%,
+            #718991 37% 48%,
+            transparent 48% 51%,
+            #879da4 51% 60%,
+            transparent 60% 63%,
+            #6e858d 63% 75%,
+            transparent 75% 78%,
+            #8da0a7 78% 88%,
+            transparent 88% 91%,
+            #71878f 91% 100%
+        );
+
+    clip-path: polygon(
+        0 100%,
+        0 45%,
+        4% 45%,
+        4% 18%,
+        12% 18%,
+        12% 40%,
+        14% 40%,
+        14% 5%,
+        24% 5%,
+        24% 32%,
+        26% 32%,
+        26% 15%,
+        34% 15%,
+        34% 38%,
+        37% 38%,
+        37% 0,
+        48% 0,
+        48% 28%,
+        51% 28%,
+        51% 12%,
+        60% 12%,
+        60% 40%,
+        63% 40%,
+        63% 8%,
+        75% 8%,
+        75% 35%,
+        78% 35%,
+        78% 18%,
+        88% 18%,
+        88% 42%,
+        91% 42%,
+        91% 13%,
+        100% 13%,
+        100% 100%
+    );
+
+    opacity: .8;
+}
+
+
+/* windows */
+
+
+@keyframes city-lights {
+    from {
+        opacity: .25;
+    }
+
+    to {
+        opacity: .55;
+    }
+}
+
+
+/* -------------------------
+   CITY CLOUDS
+------------------------- */
+
+.city-cloud {
+    position: absolute;
+
+    width: 115px;
+    height: 30px;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, .68);
+
+    filter: blur(.2px);
+
+    z-index: 2;
+
+    animation: city-cloud-float 6s ease-in-out infinite alternate;
+}
+
+.city-cloud::before,
+.city-cloud::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+
+    border-radius: 50%;
+
+    background: inherit;
+}
+
+.city-cloud::before {
+    left: 20px;
+
+    width: 42px;
+    height: 42px;
+}
+
+.city-cloud::after {
+    left: 55px;
+
+    width: 34px;
+    height: 34px;
+}
+
+.city-cloud--1 {
+    top: 12%;
+    left: 8%;
+
+    animation-delay: 0s;
+}
+
+.city-cloud--2 {
+    top: 25%;
+    left: 46%;
+
+    transform: scale(.75);
+
+    opacity: .6;
+
+    animation-delay: -2s;
+}
+
+.city-cloud--3 {
+    top: 8%;
+    right: 5%;
+
+    transform: scale(.55);
+
+    opacity: .5;
+
+    animation-delay: -4s;
+}
+
+@keyframes city-cloud-float {
+    0% {
+        transform: translateY(8px);
+    }
+
+    100% {
+        transform: translateY(-12px);
+    }
+}
+
+
+/* =========================================================
+   MODULE 2 — DESERT
+========================================================= */
+
+.module-background--2 {
+    background:
+        linear-gradient(
+            to bottom,
+            #f7dca7 0%,
+            #f7dca7 58%,
+            #e8b96e 58%,
+            #d89b51 100%
+        );
+}
+
+
+/* sun */
+
+.module-background--2::before {
+    content: "";
+
+    position: absolute;
+
+    top: 32px;
+    right: 75px;
+
+    width: 78px;
+    height: 78px;
+
+    border-radius: 50%;
+
+    background: #F2A03D;
+
+    box-shadow:
+        0 0 0 12px rgba(242, 160, 61, .13),
+        0 0 35px rgba(242, 160, 61, .35);
+
+    animation: desert-sun 12s linear infinite;
+}
+
+@keyframes desert-sun {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* subtle sun rays */
+
+.desert-rays {
+    position: absolute;
+
+    top: 19px;
+    right: 62px;
+
+    width: 104px;
+    height: 104px;
+
+    border-radius: 50%;
+
+    background:
+        repeating-conic-gradient(
+            from 0deg,
+            rgba(242, 160, 61, .20) 0deg 5deg,
+            transparent 5deg 20deg
+        );
+
+    animation: desert-rays 12s linear infinite;
+
+    z-index: 1;
+}
+
+@keyframes desert-rays {
+    from {
+        transform: rotate(0deg);
+        opacity: .35;
+    }
+
+    50% {
+        opacity: .5;
+    }
+
+    to {
+        transform: rotate(360deg);
+        opacity: .35;
+    }
+}
+
+
+/* dunes */
+
+.module-background--2::after {
+    content: "";
+
+    position: absolute;
+
+    left: -5%;
+    right: -5%;
+    bottom: -35px;
+
+    height: 150px;
+
+    background:
+        radial-gradient(
+            ellipse at 25% 50%,
+            #efc77d 0 45%,
+            transparent 46%
+        ),
+        radial-gradient(
+            ellipse at 70% 55%,
+            #dca45b 0 45%,
+            transparent 46%
+        ),
+        #e8b96e;
+
+    border-radius: 50% 50% 0 0;
+
+    animation: desert-dunes 8s ease-in-out infinite alternate;
+}
+
+@keyframes desert-dunes {
+    from {
+        transform: translateX(-12px);
+    }
+
+    to {
+        transform: translateX(12px);
+    }
+}
+
+
+/* =========================================================
+   MODULE 3 — SEA
+========================================================= */
+
+.module-background--3 {
+    background:
+        linear-gradient(
+            to bottom,
+            #d9e9ee 0%,
+            #d9e9ee 34%,
+            #8ebbc5 34%,
+            #4d8f9d 100%
+        );
+}
+
+
+/* sun */
+
+.module-background--3::before {
+    content: "";
+
+    position: absolute;
+
+    top: 42px;
+    left: 17%;
+
+    width: 68px;
+    height: 68px;
+
+    border-radius: 50%;
+
+    background: #F2A03D;
+
+    box-shadow:
+        0 0 0 10px rgba(242, 160, 61, .12);
+
+    animation: sea-sun 5s ease-in-out infinite alternate;
+}
+
+@keyframes sea-sun {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(8px);
+    }
+}
+
+
+/* gentle tide */
+
+.module-background--3::after {
+    content: "";
+
+    position: absolute;
+
+    left: -10%;
+    bottom: 24px;
+
+    width: 120%;
+    height: 80px;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent 0 17px,
+            rgba(255, 255, 255, .24) 18px 20px,
+            transparent 21px 34px
+        );
+
+    border-radius: 50%;
+
+    opacity: .7;
+
+    animation: sea-tide 5s ease-in-out infinite alternate;
+}
+
+@keyframes sea-tide {
+    from {
+        transform: translateX(-12px) translateY(3px);
+    }
+
+    to {
+        transform: translateX(12px) translateY(-3px);
+    }
+}
+
+
+/* -------------------------
+   PAPER BOAT
+------------------------- */
+
+.paper-boat {
+    position: absolute;
+
+    left: -60px;
+    bottom: 27%;
+
+    width: 34px;
+    height: 24px;
+
+    color: #fff;
+
+    font-size: 34px;
+    line-height: 24px;
+
+    transform: rotate(-5deg);
+
+    opacity: .9;
+
+    filter: drop-shadow(
+        0 3px 3px rgba(27, 42, 74, .12)
+    );
+
+    animation: paper-boat-sail 10s ease-in-out infinite;
+}
+
+@keyframes paper-boat-sail {
+    0% {
+        transform:
+            translateX(-10px)
+            translateY(3px)
+            rotate(-5deg);
+    }
+
+    50% {
+        transform:
+            translateX(260px)
+            translateY(-4px)
+            rotate(3deg);
+    }
+
+    100% {
+        transform:
+            translateX(600px)
+            translateY(3px)
+            rotate(-4deg);
+    }
+}
+
+
+/* =========================================================
+   MODULE 4 — MOUNTAINS
+========================================================= */
+
+.module-background--4-top {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #dce6ed 0%,
+            #dce6ed 52%,
+            #bdc9c4 52%,
+            #bdc9c4 100%
+        );
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   MOUNTAINS
+   ===================================================== */
+
+.module-background--4-top::before {
+    content: "";
+
+    position: absolute;
+    left: 45%;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+
+    background: #74898e;
+
+    clip-path: polygon(
+        0 100%,
+        5% 65%,
+        25% 38%,
+        45% 65%,
+        65% 28%,
+        85% 65%,
+        100% 50%,
+        100% 100%
+    );
+}
+
+/* vegetation / foreground */
+
+.module-background--4-bottom {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 20%;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #8eaa91,
+            #6d8d72
+        );
+
+    opacity: .9;
+
+    z-index: 1;
+}
+
+
+/* -------------------------
+   LOW MOUNTAIN CLOUDS
+------------------------- */
+
+.mountain-cloud {
+    position: absolute;
+
+    top: 45%;
+
+    width: 150px;
+    height: 32px;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, .62);
+
+    filter: blur(.5px);
+
+    z-index: 3;
+
+    animation: mountain-cloud-move 18s linear infinite;
+}
+
+.mountain-cloud::before,
+.mountain-cloud::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+
+    border-radius: 50%;
+
+    background: inherit;
+}
+
+.mountain-cloud::before {
+    left: 25px;
+
+    width: 46px;
+    height: 46px;
+}
+
+.mountain-cloud::after {
+    left: 78px;
+
+    width: 38px;
+    height: 38px;
+}
+
+.mountain-cloud--1 {
+    left: -180px;
+}
+
+.mountain-cloud--2 {
+    left: -420px;
+
+    top: 54%;
+
+    transform: scale(.7);
+
+    opacity: .55;
+
+    animation-delay: -9s;
+}
+
+@keyframes mountain-cloud-move {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(1500px);
+    }
+}
+
+
+/* -------------------------
+   BIRDS
+------------------------- */
+
+.mountain-bird {
+    position: absolute;
+
+    color: #52636a;
+
+    font-size: 22px;
+    font-weight: 700;
+
+    z-index: 4;
+
+    animation: bird-glide 8s ease-in-out infinite;
+}
+
+.mountain-bird--1 {
+    top: 18%;
+    left: 48%;
+}
+
+.mountain-bird--2 {
+    top: 27%;
+    left: 68%;
+
+    font-size: 16px;
+
+    animation-delay: -3s;
+}
+
+.mountain-bird--3 {
+    top: 12%;
+    left: 78%;
+
+    font-size: 14px;
+
+    animation-delay: -5s;
+}
+
+@keyframes bird-glide {
+    0%,
+    100% {
+        transform:
+            translate(0, 0)
+            rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translate(35px, -8px)
+            rotate(-3deg);
+    }
+}
+
+
+/* =========================================================
+   MODULE CONTENT
+========================================================= */
+
+.module-content {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+
+    padding: 2rem;
+
+    z-index: 5;
+}
+
+.module-content--right {
+    justify-content: flex-end;
+    padding-right: 6rem;
+}
+
+.module-content--left {
+    justify-content: flex-start;
+    padding-left: 6rem;
+}
+
+
+/* =========================================================
+   MODULE PANEL
+========================================================= */
+
+.module-panel {
+    position: relative;
+
+    width: 100%;
+    max-width: 384px;
+
+    padding: 1.5rem;
+
+    background: rgba(255,255,255,.96);
+
+    border: 2px solid var(--border);
+    border-radius: 16px;
+
+    box-shadow:
+        0 8px 24px rgba(27, 42, 74, .08);
+
+    backdrop-filter: blur(4px);
+}
+
+.module-card--current .module-panel {
+    border-color: var(--pr);
+
+    box-shadow:
+        0 8px 25px rgba(242, 160, 61, .13);
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.module-status {
+    position: absolute;
+
+    top: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transform: translateY(-50%);
+
+    border-radius: 50%;
+
+    font-weight: 800;
+
+    z-index: 6;
+}
+
+.module-status--completed {
+    left: -52px;
+
+    width: 32px;
+    height: 32px;
+
+    background: var(--success);
+    color: var(--white);
+}
+
+.module-status--current {
+    right: -64px;
+
+    width: 48px;
+    height: 48px;
+
+    background: var(--pr);
+    color: var(--acc);
+
+    box-shadow:
+        0 0 0 8px rgba(242, 160, 61, .2);
+
+    animation: active-node-pulse 2.2s ease-in-out infinite;
+}
+
+@keyframes active-node-pulse {
+    0%,
+    100% {
+        box-shadow:
+            0 0 0 8px rgba(242, 160, 61, .18);
+    }
+
+    50% {
+        box-shadow:
+            0 0 0 14px rgba(242, 160, 61, 0);
+    }
+}
+
+.module-status--locked {
+    width: 48px;
+    height: 48px;
+    padding: 10px;
+    background: var(--grey);
+}
+
+
+.module-content--right .module-status--locked,
+.module-content--right .module-status--completed {
+    left: -52px;
+    color: var(--acc);
+}
+
+.module-content--left .module-status--locked,
+.module-content--left .module-status--current {
+    right: -52px;
+    margin-left: 10px;
+}
+
+
+/* =========================================================
+   MODULE TEXT
+========================================================= */
+
+.module-label {
+    display: block;
+
+    margin-bottom: .5rem;
+
+    font-size: 16px;
+    font-weight: 800;
+
+    letter-spacing: .03em;
+}
+
+.module-card--completed .module-label {
+    color: var(--success);
+}
+
+.module-card--current .module-label {
+    color: var(--pr);
+}
+
+.module-card--locked .module-label {
+    color: var(--pr);
+}
+
+.module-panel h3 {
+    margin: 0 0 .5rem;
+
+    color: var(--acc);
+
+    font-size: 24px;
+    line-height: 1.3;
+    font-weight: 800;
+}
+
+.module-panel p {
+    margin: 0 0 1.5rem;
+
+    color: var(--acc);
+
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.module-button {
+    width: 100%;
+    min-height: 56px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    padding: 0 1rem;
+
+    border: 2px solid var(--acc);
+    border-radius: 999px;
+
+    background: var(--white);
+    color: var(--acc);
+
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 800;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        transform 160ms ease,
+        background-color 160ms ease,
+        border-color 160ms ease;
+}
+
+.module-button:hover {
+    transform: translateY(-2px);
+
+    background: var(--bg);
+}
+
+.module-button:active {
+    transform: translateY(1px);
+}
+
+.module-card--current .module-button {
+    border-color: var(--pr);
+
+    background: var(--pr);
+}
+
+
+/* =========================================================
+   COURSE START BUTTON
+========================================================= */
+
+.course-start-button {
+    width: fit-content;
+
+    padding-inline: 2rem;
+
+    background: var(--pr);
+    border-color: var(--pr);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .course-page {
+        padding: 2rem 1.25rem;
+        padding-top: 120px;
+    }
+
+    .course-header {
+        padding: 1.25rem;
+    }
+
+    .course-actions {
+        position: static;
+
+        justify-content: space-between;
+
+        margin-bottom: 1rem;
+    }
+
+    .course-header-info {
+        flex-direction: column;
+    }
+
+    .course-image {
+        width: 100%;
+        height: 180px;
+    }
+
+    .course-details h1 {
+        font-size: 32px;
+    }
+
+    .course-details p {
+        font-size: 17px;
+    }
+
+    .course-map {
+        padding: 0 .25rem;
+    }
+
+    .course-map-line {
+        display: none;
+    }
+
+    .course-map-list {
+        gap: 2rem;
+    }
+
+    .module-card,
+    .module-card:nth-child(even) {
+        width: 100%;
+        height: auto;
+        min-height: 480px;
+
+        margin-left: 0;
+
+        border-radius: 18px;
+    }
+
+    .module-content,
+    .module-content--right,
+    .module-content--left {
+        position: relative;
+
+        justify-content: center;
+
+        padding: 2rem 1.25rem;
+    }
+
+    .module-panel {
+        max-width: none;
+    }
+
+    .module-status {
+        display: none;
+    }
+
+    .module-panel h3 {
+        font-size: 22px;
+    }
+
+    .module-panel p {
+        font-size: 17px;
+    }
+
+    .city-cloud {
+        opacity: .45;
+    }
+
+    .mountain-cloud {
+        animation-duration: 24s;
+    }
+
+    .mountain-bird {
+        opacity: .7;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .module-card,
+    .module-button,
+    .module-background--1::after,
+    .module-background--2::before,
+    .module-background--2::after,
+    .module-background--3::before,
+    .module-background--3::after,
+    .module-status--current,
+    .city-cloud,
+    .desert-rays,
+    .paper-boat,
+    .mountain-cloud,
+    .mountain-bird {
+        animation: none !important;
+        transition: none !important;
+    }
+}

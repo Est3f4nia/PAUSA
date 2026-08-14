@@ -1,0 +1,516 @@
+/* =========================================================
+   DASHBOARD LAYOUT
+   Shared application shell for Profile B / Profile C
+========================================================= */
+
+.dashboard-layout {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+
+    background: #FAF8F3;
+    color: var(--acc);
+}
+
+
+/* =========================================================
+   DESKTOP SIDEBAR
+========================================================= */
+
+.dashboard-sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+
+    width: 272px;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 28px 18px;
+
+    box-sizing: border-box;
+
+    background: #1B2A4A;
+    color: #FFFFFF;
+
+    border-right: 1px solid rgba(231, 226, 216, 0.2);
+
+    z-index: 30;
+
+    overflow-y: auto;
+}
+
+
+/* Brand */
+
+.dashboard-sidebar-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 4px 8px 28px;
+
+    text-align: center;
+}
+
+.dashboard-logo {
+    width: 72px;
+    height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 14px;
+
+    border: 2px solid #E7E2D8;
+    border-radius: 50%;
+
+    background: #FFFFFF;
+    color: #1B2A4A;
+
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 220ms ease,
+        box-shadow 220ms ease;
+}
+
+.dashboard-sidebar-brand:hover .dashboard-logo {
+    transform: translateY(-3px) rotate(-2deg);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.13);
+}
+
+.dashboard-sidebar-brand h1 {
+    margin: 0;
+
+    color: #FFFFFF;
+
+    font-size: 25px;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.dashboard-sidebar-brand p {
+    max-width: 190px;
+
+    margin: 7px 0 0;
+
+    color: rgba(255, 255, 255, 0.68);
+
+    font-size: 15px;
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.dashboard-navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    flex: 1;
+
+    padding-top: 8px;
+}
+
+.dashboard-nav-item {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    min-height: 56px;
+
+    padding: 0 17px;
+
+    box-sizing: border-box;
+
+    border-radius: 16px;
+
+    color: rgba(255, 255, 255, 0.72);
+
+    font-size: 17px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        color 180ms ease,
+        background-color 180ms ease,
+        transform 180ms ease;
+}
+
+.dashboard-nav-item svg {
+    flex-shrink: 0;
+
+    transition: transform 180ms ease;
+}
+
+.dashboard-nav-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #FFFFFF;
+
+    transform: translateX(2px);
+}
+
+.dashboard-nav-item:hover svg {
+    transform: scale(1.08);
+}
+
+
+/*
+ * Active state.
+ * Add .dashboard-nav-item--active to the current link.
+ */
+
+.dashboard-nav-item--active {
+    background: #F2A03D;
+    color: #1B2A4A;
+
+    box-shadow: 0 5px 0 rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-nav-item--active:hover {
+    background: #F2A03D;
+    color: #1B2A4A;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   SIDEBAR ACTION
+========================================================= */
+
+.dashboard-sidebar-action {
+    padding: 18px 4px 2px;
+}
+
+.dashboard-sidebar-action a {
+    min-height: 56px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 999px;
+
+    background: #F2A03D;
+    color: #1B2A4A;
+
+    font-size: 17px;
+    font-weight: 800;
+
+    text-decoration: none;
+
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.12);
+
+    transition:
+        transform 160ms ease,
+        box-shadow 160ms ease,
+        filter 160ms ease;
+}
+
+.dashboard-sidebar-action a:hover {
+    filter: brightness(1.04);
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 6px 0 rgba(0, 0, 0, 0.12);
+}
+
+.dashboard-sidebar-action a:active {
+    transform: translateY(2px);
+
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   MAIN CONTENT SHELL
+========================================================= */
+
+.dashboard-main {
+    width: calc(100% - 272px);
+    min-height: 100vh;
+
+    margin-left: 272px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   MOBILE TOP BAR
+========================================================= */
+
+.dashboard-mobile-header {
+    display: none;
+}
+
+
+/* =========================================================
+   MOBILE BOTTOM NAV
+========================================================= */
+
+.dashboard-mobile-navigation {
+    display: none;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .dashboard-layout {
+        display: block;
+    }
+
+    .dashboard-sidebar {
+        display: none;
+    }
+
+    .dashboard-main {
+        width: 100%;
+        min-height: 100vh;
+
+        margin-left: 0;
+    }
+
+    .dashboard-mobile-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 76px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 0 20px;
+
+        box-sizing: border-box;
+
+        background: rgba(255, 255, 255, 0.96);
+
+        border-bottom: 1px solid #E7E2D8;
+
+        box-shadow: 0 3px 14px rgba(27, 42, 74, 0.05);
+
+        backdrop-filter: blur(10px);
+
+        z-index: 40;
+    }
+
+    .dashboard-mobile-brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        color: #F2A03D;
+
+        font-size: 22px;
+        font-weight: 800;
+    }
+
+    .dashboard-mobile-brand svg {
+        transition: transform 200ms ease;
+    }
+
+    .dashboard-mobile-brand:hover svg {
+        transform: rotate(-8deg);
+    }
+
+    .dashboard-mobile-user {
+        width: 48px;
+        height: 48px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border: 1px solid #E7E2D8;
+        border-radius: 50%;
+
+        background: #FAF8F3;
+        color: #1B2A4A;
+    }
+
+    .dashboard-mobile-navigation {
+        position: fixed;
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+
+        height: 70px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        padding: 6px;
+
+        box-sizing: border-box;
+
+        border: 1px solid #E7E2D8;
+        border-radius: 22px;
+
+        background: rgba(255, 255, 255, 0.97);
+
+        box-shadow:
+            0 10px 30px rgba(27, 42, 74, 0.12),
+            0 2px 6px rgba(27, 42, 74, 0.06);
+
+        backdrop-filter: blur(12px);
+
+        z-index: 50;
+    }
+
+    .dashboard-mobile-navigation a {
+        min-width: 62px;
+        min-height: 54px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        gap: 3px;
+
+        padding: 5px 10px;
+
+        border-radius: 16px;
+
+        color: #534436;
+
+        font-size: 12px;
+        font-weight: 700;
+
+        text-decoration: none;
+
+        transition:
+            background-color 160ms ease,
+            color 160ms ease,
+            transform 160ms ease;
+    }
+
+    .dashboard-mobile-navigation a:hover {
+        background: #FAF8F3;
+        color: #1B2A4A;
+
+        transform: translateY(-2px);
+    }
+
+    .dashboard-mobile-navigation a:active {
+        transform: scale(0.95);
+    }
+}
+
+
+
+/* =========================================================
+   DASHBOARD VARIANTS
+   Same structure, different visual personality
+========================================================= */
+
+
+/* =========================================================
+   STUDENT
+   Clear, calm and accessible
+========================================================= */
+
+.dashboard-layout--student {
+    --dashboard-accent: #3C8C63;
+    --dashboard-accent-soft: rgba(60, 140, 99, 0.12);
+    --dashboard-sidebar: #1B2A4A;
+    --dashboard-background: #FAF8F3;
+}
+
+.dashboard-layout--student .dashboard-sidebar {
+    background: #1B2A4A;
+}
+
+.dashboard-layout--student .dashboard-nav-item--active {
+    background: #3C8C63;
+    color: #FFFFFF;
+}
+
+.dashboard-layout--student .dashboard-nav-item--active:hover {
+    background: #3C8C63;
+    color: #FFFFFF;
+}
+
+.dashboard-layout--student .dashboard-sidebar-action a {
+    background: #3C8C63;
+    color: #FFFFFF;
+}
+
+.dashboard-layout--student .dashboard-mobile-brand {
+    color: #3C8C63;
+}
+
+.dashboard-layout--student .dashboard-mobile-user {
+    color: #3C8C63;
+}
+
+.dashboard-layout--student .dashboard-mobile-navigation a:hover {
+    color: #3C8C63;
+}
+
+
+/* =========================================================
+   FAMILY
+   Warm, friendly and collaborative
+========================================================= */
+
+.dashboard-layout--family {
+    --dashboard-accent: #F2A03D;
+    --dashboard-accent-soft: rgba(242, 160, 61, 0.12);
+    --dashboard-sidebar: #1B2A4A;
+    --dashboard-background: #FAF8F3;
+}
+
+.dashboard-layout--family .dashboard-sidebar {
+    background: #1B2A4A;
+}
+
+.dashboard-layout--family .dashboard-nav-item--active {
+    background: #F2A03D;
+    color: #1B2A4A;
+}
+
+.dashboard-layout--family .dashboard-nav-item--active:hover {
+    background: #F2A03D;
+    color: #1B2A4A;
+}
+
+.dashboard-layout--family .dashboard-sidebar-action a {
+    background: #F2A03D;
+    color: #1B2A4A;
+}
+
+.dashboard-layout--family .dashboard-mobile-brand {
+    color: #F2A03D;
+}
+
+.dashboard-layout--family .dashboard-mobile-user {
+    color: #1B2A4A;
+}
+
+.dashboard-layout--family .dashboard-mobile-navigation a:hover {
+    color: #F2A03D;
+}
